@@ -15,7 +15,7 @@ select ORD_no ,ord_date,purch_amt  from Orderdetails where salesman_id=500
 --***************************************
 
 create database salesmanreport
-create table salesmanreport(salesman_id  numeric(5) primary key,    name  varchar(30) not null unique ,   city  varchar(15) not null,  commission decimal(5,2 ));
+create table salesmanreport(salesman_id  numeric(5) primary key,    name  varchar(30)   ,   city  varchar(15) ,  commission decimal(5,2 ))
 select * from salesmanreport
 drop table  salesmanreport
 insert into salesmanreport values(5001, 'James Hoog' ,' New York' ,  0.15)
@@ -33,7 +33,7 @@ select max(commission ) from salesmanreport
 select avg(commission ) from salesmanreport
 --drop table  salesmanreport
              
-create table Orderdetails(ORD_no numeric(5) primary key, purch_amt decimal(8,2),ord_date date, customer_id numeric(5),salesman_id numeric(5))
+create table Orderdetails(ORD_no numeric(5) , purch_amt decimal(8,2),ord_date date, customer_id numeric(5),salesman_id numeric(5))
 drop table Orderdetails
 select * from Orderdetails
 insert into Orderdetails values(70001 ,150.5  ,'2012-10-05'  ,3005  ,5002 )
